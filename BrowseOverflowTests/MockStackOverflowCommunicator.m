@@ -11,6 +11,7 @@
 @implementation MockStackOverflowCommunicator
 {
     BOOL wasAskedToFetchQuestions;
+    BOOL wasAskedToFetchBody;
 }
 
 - (void)searchForQuestionsWithTag:(NSString *)tag
@@ -18,9 +19,20 @@
     wasAskedToFetchQuestions = YES;
 }
 
+- (void)downloadInformationForQuestionWithID:(NSInteger)questionID
+{
+    wasAskedToFetchBody = YES;
+}
+
 - (BOOL)wasAskedToFetchQuestions
 {
     return wasAskedToFetchQuestions;
 }
+
+- (BOOL)wasAskedToFetchBody
+{
+    return wasAskedToFetchBody;
+}
+
 
 @end

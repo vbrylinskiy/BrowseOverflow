@@ -13,7 +13,10 @@
 
 @synthesize date;
 @synthesize score;
+@synthesize body;
 @synthesize title;
+@synthesize asker;
+@synthesize questionID;
 
 - (id)init
 {

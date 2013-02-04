@@ -8,13 +8,20 @@
 
 #import "MockStackOverflowManagerDelegate.h"
 #import "Topic.h"
+#import "Question.h"
 
 @implementation MockStackOverflowManagerDelegate
 
 @synthesize fetchError;
 @synthesize receivedQuestions;
+@synthesize bodyQuestion;
 
 - (void)fetchingQuestionsFailedWithError: (NSError *)error
+{
+    self.fetchError = error;
+}
+
+- (void)fetchingQuestionBodyFailedWithError:(NSError *)error
 {
     self.fetchError = error;
 }
@@ -23,5 +30,10 @@
 {
     self.receivedQuestions = questions;
 }
+
+- (void)bodyReceivedForQuestion:(Question *)question {
+    self.bodyQuestion = question;
+}
+
 
 @end

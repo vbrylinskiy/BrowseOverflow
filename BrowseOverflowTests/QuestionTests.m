@@ -9,12 +9,14 @@
 #import "QuestionTests.h"
 #import "Question.h"
 #import "Answer.h"
+#import "Person.h"
 
 @implementation QuestionTests
 {
     Question *question;
     Answer *lowScore;
     Answer *highScore;
+    Person *asker;
 }
 
 - (void)setUp {
@@ -22,6 +24,9 @@
     question.date = [NSDate distantPast];
     question.title = @"Do iPhones also dream of electric sheep?";
     question.score = 42;
+    
+    asker = [[Person alloc] initWithName: @"Graham Lee" avatarLocation:@"http://example.com/avatar.png"];
+    question.asker = asker;
     
     Answer *accepted = [[Answer alloc] init];
     accepted.score = 1;
@@ -81,5 +86,9 @@
     highScore = nil;
 }
 
+- (void)testQuestionWasAskedBySomeone
+{
+    STAssertEqualObjects(question.asker, asker, @"Question should keep track of who asked it.");
+}
 
 @end

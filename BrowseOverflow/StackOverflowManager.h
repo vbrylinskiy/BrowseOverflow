@@ -12,11 +12,13 @@
 
 @class Topic;
 @class QuestionBuilder;
+@class Question;
 
 extern NSString *StackOverflowManagerSearchFailedError;
-
+extern NSString *StackOverflowManagerDownloadQuestionBodyError;
 enum {
-    StackOverflowManagerErrorQuestionSearchCode
+    StackOverflowManagerErrorQuestionSearchCode,
+    StackOverflowManagerDownloadQuestionBodyErrorCode
 };
 
 @interface StackOverflowManager : NSObject
@@ -24,9 +26,15 @@ enum {
 @property (weak, nonatomic) id<StackOverflowManagerDelegate> delegate;
 @property (strong) StackOverflowCommunicator *communicator;
 @property (strong) QuestionBuilder *questionBuilder;
+@property (strong) Question *questionNeedingBody;
 
 - (void)fetchQuestionsOnTopic:(Topic *)topic;
+- (void)fetchBodyForQuestion:(Question *)question;
+
 - (void)searchingForQuestionsFailedWithError:(NSError *)error;
+- (void)fetchingQuestionBodyFailedWithError:(NSError *)error;
+
 - (void)receivedQuestionsJSON:(NSString *)objectNotation;
+- (void)receivedQuestionBodyJSON:(NSString *)objectNotation;
 
 @end
