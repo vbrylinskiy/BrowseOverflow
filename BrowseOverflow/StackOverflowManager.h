@@ -11,6 +11,7 @@
 #import "StackOverflowCommunicator.h"
 
 @class Topic;
+@class QuestionBuilder;
 
 extern NSString *StackOverflowManagerSearchFailedError;
 
@@ -22,8 +23,10 @@ enum {
 
 @property (weak, nonatomic) id<StackOverflowManagerDelegate> delegate;
 @property (strong) StackOverflowCommunicator *communicator;
+@property (strong) QuestionBuilder *questionBuilder;
 
 - (void)fetchQuestionsOnTopic:(Topic *)topic;
 - (void)searchingForQuestionsFailedWithError:(NSError *)error;
+- (void)receivedQuestionsJSON:(NSString *)objectNotation;
 
 @end

@@ -43,6 +43,9 @@
 		EBBAE5A616C02C1600AFBAC7 /* StackOverflowCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = EBBAE5A516C02C1600AFBAC7 /* StackOverflowCommunicator.m */; };
 		EBBAE5A716C02C1600AFBAC7 /* StackOverflowCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = EBBAE5A516C02C1600AFBAC7 /* StackOverflowCommunicator.m */; };
 		EBBAE5AC16C02C9700AFBAC7 /* MockStackOverflowCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = EBBAE5AB16C02C9700AFBAC7 /* MockStackOverflowCommunicator.m */; };
+		EBBAE5AF16C039E200AFBAC7 /* QuestionBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = EBBAE5AE16C039E200AFBAC7 /* QuestionBuilder.m */; };
+		EBBAE5B016C039E200AFBAC7 /* QuestionBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = EBBAE5AE16C039E200AFBAC7 /* QuestionBuilder.m */; };
+		EBBAE5B316C03A3F00AFBAC7 /* FakeQuestionBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = EBBAE5B216C03A3F00AFBAC7 /* FakeQuestionBuilder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +109,10 @@
 		EBBAE5A516C02C1600AFBAC7 /* StackOverflowCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackOverflowCommunicator.m; sourceTree = "<group>"; };
 		EBBAE5AA16C02C9700AFBAC7 /* MockStackOverflowCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockStackOverflowCommunicator.h; sourceTree = "<group>"; };
 		EBBAE5AB16C02C9700AFBAC7 /* MockStackOverflowCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockStackOverflowCommunicator.m; sourceTree = "<group>"; };
+		EBBAE5AD16C039E200AFBAC7 /* QuestionBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionBuilder.h; sourceTree = "<group>"; };
+		EBBAE5AE16C039E200AFBAC7 /* QuestionBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionBuilder.m; sourceTree = "<group>"; };
+		EBBAE5B116C03A3F00AFBAC7 /* FakeQuestionBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeQuestionBuilder.h; sourceTree = "<group>"; };
+		EBBAE5B216C03A3F00AFBAC7 /* FakeQuestionBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeQuestionBuilder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +219,8 @@
 				EBBAE5A216C026D700AFBAC7 /* MockStackOverflowManagerDelegate.m */,
 				EBBAE5AA16C02C9700AFBAC7 /* MockStackOverflowCommunicator.h */,
 				EBBAE5AB16C02C9700AFBAC7 /* MockStackOverflowCommunicator.m */,
+				EBBAE5B116C03A3F00AFBAC7 /* FakeQuestionBuilder.h */,
+				EBBAE5B216C03A3F00AFBAC7 /* FakeQuestionBuilder.m */,
 			);
 			path = BrowseOverflowTests;
 			sourceTree = "<group>";
@@ -248,6 +257,8 @@
 				EBBAE5A016C026AB00AFBAC7 /* StackOverflowManagerDelegate.h */,
 				EBBAE5A416C02C1600AFBAC7 /* StackOverflowCommunicator.h */,
 				EBBAE5A516C02C1600AFBAC7 /* StackOverflowCommunicator.m */,
+				EBBAE5AD16C039E200AFBAC7 /* QuestionBuilder.h */,
+				EBBAE5AE16C039E200AFBAC7 /* QuestionBuilder.m */,
 			);
 			name = BLL;
 			sourceTree = "<group>";
@@ -373,6 +384,7 @@
 				705D1BA616C00F0E00DCCA22 /* Answer.m in Sources */,
 				EBBAE59E16C0268500AFBAC7 /* StackOverflowManager.m in Sources */,
 				EBBAE5A616C02C1600AFBAC7 /* StackOverflowCommunicator.m in Sources */,
+				EBBAE5AF16C039E200AFBAC7 /* QuestionBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +405,8 @@
 				EBBAE5A316C026D700AFBAC7 /* MockStackOverflowManagerDelegate.m in Sources */,
 				EBBAE5A716C02C1600AFBAC7 /* StackOverflowCommunicator.m in Sources */,
 				EBBAE5AC16C02C9700AFBAC7 /* MockStackOverflowCommunicator.m in Sources */,
+				EBBAE5B016C039E200AFBAC7 /* QuestionBuilder.m in Sources */,
+				EBBAE5B316C03A3F00AFBAC7 /* FakeQuestionBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

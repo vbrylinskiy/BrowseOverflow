@@ -8,6 +8,7 @@
 
 #import "StackOverflowManager.h"
 #import "Topic.h"
+#import "QuestionBuilder.h"
 
 NSString *StackOverflowManagerSearchFailedError = @"StackOverflowManagerSearchFailedError";
 
@@ -15,6 +16,7 @@ NSString *StackOverflowManagerSearchFailedError = @"StackOverflowManagerSearchFa
 
 @synthesize delegate;
 @synthesize communicator;
+@synthesize questionBuilder;
 
 - (void)setDelegate:(id<StackOverflowManagerDelegate>)newDelegate
 {
@@ -31,12 +33,32 @@ NSString *StackOverflowManagerSearchFailedError = @"StackOverflowManagerSearchFa
     [communicator searchForQuestionsWithTag:[topic tag]];
 }
 
+- (void)receivedQuestionsJSON:(NSString *)objectNotation
+{
+    NSError *error = nil;
+    NSArray *questions = [questionBuilder questionsFromJSON:objectNotation error:&error];
+    if (!questions)
+    {        
+        [self tellDelegateAboutQuestionSearchError:error];
+    }
+    else
+    {
+        [delegate didReceiveQuestions:questions];
+    }
+}
+
 - (void)searchingForQuestionsFailedWithError:(NSError *)error {
+    [self tellDelegateAboutQuestionSearchError:error];
+}
+
+- (void)tellDelegateAboutQuestionSearchError:(NSError *)error
+{
     NSDictionary *errorInfo = [NSDictionary dictionaryWithObject:error forKey: NSUnderlyingErrorKey];
     
     NSError *reportableError = [NSError
                                 errorWithDomain:StackOverflowManagerSearchFailedError
-                                code: StackOverflowManagerErrorQuestionSearchCode userInfo:errorInfo];
+                                code: StackOverflowManagerErrorQuestionSearchCode
+                                userInfo:errorInfo];
     
     [delegate fetchingQuestionsFailedWithError:reportableError];
 }
