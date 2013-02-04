@@ -10,8 +10,8 @@
 
 @interface Person : NSObject
 
-@property (nonatomic, readwrite) NSString *name;
-@property (nonatomic, readwrite) NSURL *avatarURL;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSURL *avatarURL;
 
 - (id)initWithName:(NSString *)aName avatarLocation:(NSString *)location;
 
