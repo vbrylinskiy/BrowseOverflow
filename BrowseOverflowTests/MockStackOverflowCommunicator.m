@@ -12,7 +12,16 @@
 {
     BOOL wasAskedToFetchQuestions;
     BOOL wasAskedToFetchBody;
+    NSInteger questionID;
 }
+
+- (id)init {
+    if ((self = [super init])) {
+        questionID = NSNotFound;
+    }
+    return self;
+}
+
 
 - (void)searchForQuestionsWithTag:(NSString *)tag
 {
@@ -24,6 +33,11 @@
     wasAskedToFetchBody = YES;
 }
 
+- (void)downloadAnswersToQuestionWithID:(NSInteger)identifier {
+    questionID = identifier;
+}
+
+
 - (BOOL)wasAskedToFetchQuestions
 {
     return wasAskedToFetchQuestions;
@@ -33,6 +47,11 @@
 {
     return wasAskedToFetchBody;
 }
+
+- (NSInteger)askedForAnswersToQuestionID {
+    return questionID;
+}
+
 
 
 @end
